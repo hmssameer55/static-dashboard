@@ -8,7 +8,7 @@ function AnimatedCircularProgress({
   subject,
   animate = false,
 }: {
-  subject: (typeof subjects)[0];
+  subject: (typeof SUBJECTS)[number];
   animate?: boolean;
 }) {
   const [currentProgress, setCurrentProgress] = useState(0);
