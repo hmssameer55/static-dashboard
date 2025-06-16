@@ -153,7 +153,7 @@ export function AnimatedSubjectCards() {
         <h2 className="text-sm font-medium text-gray-400 uppercase tracking-wider">
           Subject Level Preparedness
         </h2>
-        <button className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center justify-center gap-1 font-medium">
+        <button className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center justify-center gap-1 font-medium cursor-pointer">
           <span>VIEW DETAILS</span>
           <ChevronRight size={18} />
         </button>
@@ -198,7 +198,7 @@ export function AnimatedSubjectCards() {
                 </div>
 
                 {/* Action Button */}
-                <button className="w-full mt-4 py-2.5 text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
+                <button className="cursor-pointer w-full mt-4 py-2.5 text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
                   IMPROVE YOUR SCORE
                 </button>
               </div>
