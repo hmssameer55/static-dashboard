@@ -164,7 +164,7 @@ export function AnimatedSubjectCards() {
         {SUBJECTS.map((subject) => (
           <div
             key={subject.name}
-            className="bg-gray-800/60 rounded-lg border border-gray-700/50 overflow-hidden"
+            className="bg-gray-900 rounded-lg border border-gray-700/50 overflow-hidden"
           >
             <div className="p-6 flex flex-col items-center">
               {/* Subject Title */}

@@ -14,7 +14,7 @@ export default function DayStreak() {
   ];
 
   return (
-    <div className="bg-[#1e1e1e] rounded-lg p-6 border border-gray-700/50">
+    <div className="bg-gray-900 rounded-lg p-6 border border-gray-700/50">
       {/* Header with icon and title */}
       <div className="flex items-center justify-between">
         <div>

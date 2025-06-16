@@ -5,7 +5,7 @@ export default function ActionCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {/* Scholarship Test Card */}
-      <div className="bg-[#14131a] rounded-xl px-4 py-5 flex items-center justify-between">
+      <div className="bg-gray-900 rounded-xl px-4 py-5 flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2">
             <h3 className="text-white text-base font-semibold">
@@ -26,7 +26,7 @@ export default function ActionCards() {
       </div>
 
       {/* Coins Card */}
-      <div className="bg-[#14131a] rounded-xl px-4 py-5 flex items-center justify-between">
+      <div className="bg-gray-900 rounded-xl px-4 py-5 flex items-center justify-between">
         <div className="flex items-start gap-3">
           <Image
             src={rupee}
