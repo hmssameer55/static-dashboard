@@ -24,7 +24,10 @@
   --green-500: oklch(67.1% 0.173 142.48);
   --green-800: oklch(37.26% 0.136 140.86);
   --green-900: oklch(32.44% 0.12 140.84);
-  
+
+  /* === Gray === */
+  --gray-900: oklch(21% 0.034 264.665);
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -79,6 +82,9 @@
   --color-green-500: var(--green-500);
   --color-green-800: var(--green-800);
   --color-green-900: var(--green-900);
+
+  --color-gray-900: var(--gray-900);
+
 
   /* Optional font tokens */
   --font-sans: var(--font-geist-sans);
