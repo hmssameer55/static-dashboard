@@ -11,27 +11,29 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import PlaceholderHumanImg from "@/public/placeholder.jpg";
+import Books from "@/public/books.jpg";
 
 const testimonials = [
   {
     name: "Sarthak Chadha",
     role: "Student",
     rating: 5,
-    avatar: "/",
+    avatar: PlaceholderHumanImg,
     text: "Super smooth process. I was stressed about the assignment, and the deadline was very close. Thank you very much!",
   },
   {
     name: "Anjali Sharma",
     role: "Graduate",
     rating: 5,
-    avatar: "/",
+    avatar: PlaceholderHumanImg,
     text: "Very helpful content and support. I loved the experience!",
   },
   {
     name: "Ravi Verma",
     role: "CUET Aspirant",
     rating: 4,
-    avatar: "/",
+    avatar: PlaceholderHumanImg,
     text: "Helped me boost my confidence. Worth every minute!",
   },
 ];
@@ -40,17 +42,17 @@ const blogs = [
   {
     title: "Everything you need to know about CUET 2023",
     date: "3 days ago",
-    image: "/placeholder.svg?height=160&width=300",
+    image: Books,
   },
   {
     title: "Top 10 CUET Preparation Tips",
     date: "1 week ago",
-    image: "/placeholder.svg?height=160&width=300",
+    image: Books,
   },
   {
     title: "How to Manage Time During Exams",
     date: "2 weeks ago",
-    image: "/placeholder.svg?height=160&width=300",
+    image: Books,
   },
 ];
 
@@ -134,18 +136,17 @@ export default function RightSidebar() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -30 }}
               transition={{ duration: 0.4 }}
-              className="absolute inset-0 bg-[#1e1e1e] rounded-lg p-4"
+              className="absolute inset-0 bg-gray-900 rounded-lg p-4"
             >
-              <div className="flex items-center mb-2">
-                <div className="size-14 rounded-full bg-gray-700 mr-3 overflow-hidden">
-                  <Image
-                    src={testimonials[testimonialIndex].avatar}
-                    alt={testimonials[testimonialIndex].name}
-                    width={50}
-                    height={50}
-                    className="object-cover"
-                  />
-                </div>
+              <div className="flex items-center mb-2 gap-2">
+                <Image
+                  src={testimonials[testimonialIndex].avatar}
+                  alt={testimonials[testimonialIndex].name}
+                  width={60}
+                  height={60}
+                  className="object-contain rounded-full"
+                />
+
                 <div className="space-y-1">
                   <p className="text-sm font-medium">
                     {testimonials[testimonialIndex].name}
@@ -218,7 +219,7 @@ export default function RightSidebar() {
           </div>
         </div>
 
-        <div className="relative h-[220px] overflow-hidden rounded-lg bg-[#1e1e1e]">
+        <div className="relative h-[250px] overflow-hidden rounded-lg bg-gray-900">
           <AnimatePresence mode="wait">
             <motion.div
               key={blogIndex}

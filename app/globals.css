@@ -85,7 +85,6 @@
 
   --color-gray-900: var(--gray-900);
 
-
   /* Optional font tokens */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -136,6 +135,25 @@ body {
   font-family: var(--font-sans, system-ui, sans-serif);
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -178,4 +196,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

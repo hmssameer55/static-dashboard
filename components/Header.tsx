@@ -12,7 +12,7 @@ export default function Header() {
         <div className="flex place-items-center gap-2 border border-amber-100 rounded-lg p-1">
           <div className="text-right hidden md:block p-1">
             <div className="flex items-center">
-              <span className="text-amber-600">
+              <span className="text-amber-400">
                 Get unlimited access to practice tools.
               </span>
               <span className="ml-1">Starting at ₹2,199</span>
