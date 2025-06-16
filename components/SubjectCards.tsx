@@ -1,7 +1,7 @@
 "use client";
 
 import { SUBJECTS } from "@/lib/constants";
-import { CheckCircle, ChevronRight, Circle } from "lucide-react";
+import { CheckCircle, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 function AnimatedCircularProgress({
@@ -161,7 +161,7 @@ export function AnimatedSubjectCards() {
 
       {/* Subject Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {SUBJECTS.map((subject, index) => (
+        {SUBJECTS.map((subject) => (
           <div
             key={subject.name}
             className="bg-gray-800/60 rounded-lg border border-gray-700/50 overflow-hidden"
@@ -213,7 +213,7 @@ export function AnimatedSubjectCards() {
           <CheckCircle />
         </div>
         <p className="text-white text-sm font-medium">
-          Let's embark on a personalized journey to delve deeper!
+          Lets embark on a personalized journey to delve deeper!
         </p>
       </div>
     </div>

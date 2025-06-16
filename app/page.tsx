@@ -2,7 +2,6 @@ import ActionCards from "@/components/ActionCards";
 import DayStreak from "@/components/DayStreak";
 import PromotionalBanner from "@/components/Hero-carousel";
 import OffersSection from "@/components/OffersSection";
-import Score from "@/components/Score";
 import { AnimatedSubjectCards } from "@/components/SubjectCards";
 
 export default function Home() {
