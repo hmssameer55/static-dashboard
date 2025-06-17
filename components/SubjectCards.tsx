@@ -17,7 +17,7 @@ function AnimatedCircularProgress({
   const radius = 50;
   const strokeWidth = 8;
   const center = 64;
-  const circumference = 2 * Math.PI * radius;
+  const circumference = Math.PI * radius;
 
   useEffect(() => {
     if (animate) {
