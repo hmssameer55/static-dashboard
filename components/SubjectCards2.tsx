@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SUBJECTS } from "@/lib/constants";
 import { Progress } from "@/components/ui/progress";
 
@@ -148,7 +148,7 @@ function AnimatedCircularProgress({
           className="w-full h-1 bg-gray-700 rounded-full overflow-hidden"
         />
 
-        <button className="cursor-pointer  w-full mt-4 py-2.5 text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
+        <button className="cursor-pointer font-bold w-full mt-2 py-2.5 text-md text-cyan-400 hover:text-cyan-300 transition-color">
           IMPROVE YOUR SCORE
         </button>
       </div>
