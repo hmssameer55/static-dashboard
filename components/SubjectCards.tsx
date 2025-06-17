@@ -3,6 +3,15 @@
 import { useEffect, useState } from "react";
 import { SUBJECTS } from "@/lib/constants";
 import { Progress } from "@/components/ui/progress";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  CarouselApi,
+} from "@/components/ui/carousel";
 
 function AnimatedCircularProgress({
   subject,
@@ -60,7 +69,7 @@ function AnimatedCircularProgress({
   const dotY = center + radius * Math.sin(dotAngle);
 
   return (
-    <div className="relative flex flex-col bg-[#111827] rounded-xl py-5">
+    <div className="relative flex flex-col">
       <p className="text-white text-xl tracking-wide text-center mb-5">
         {subject.name}
       </p>
@@ -148,7 +157,7 @@ function AnimatedCircularProgress({
           className="w-full h-1 bg-gray-700 rounded-full overflow-hidden"
         />
 
-        <button className="cursor-pointer font-bold w-full mt-2 py-2.5 text-md text-cyan-400 hover:text-cyan-300 transition-color">
+        <button className="cursor-pointer font-bold w-full mt-3 text-md text-cyan-400 hover:text-cyan-300 transition-color">
           IMPROVE YOUR SCORE
         </button>
       </div>
@@ -156,16 +165,53 @@ function AnimatedCircularProgress({
   );
 }
 
-export function AnimatedSubjectCards() {
+export default function AnimatedSubjectCards() {
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const update = () => {
+      setCanScrollPrev(api.canScrollPrev());
+      setCanScrollNext(api.canScrollNext());
+    };
+
+    api.on("select", update);
+    update();
+
+    return () => {
+      api.off("select", update);
+    };
+  }, [api]);
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {SUBJECTS.map((subject) => (
-        <AnimatedCircularProgress
-          key={subject.name}
-          subject={subject}
-          animate
-        />
-      ))}
-    </div>
+    <Carousel className="w-full relative" setApi={setApi}>
+      <CarouselContent>
+        {SUBJECTS.map((subject) => (
+          <CarouselItem
+            key={subject.name}
+            className="md:basis-1/2 lg:basis-1/3 px-2"
+          >
+            <Card className="bg-gray-900 border-none shadow-none">
+              <CardContent className="p-4">
+                <AnimatedCircularProgress subject={subject} animate />
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+
+      {canScrollPrev && (
+        <CarouselPrevious className="absolute top-1/2 -left-4 -translate-y-1/2 text-black size-10 cursor-pointer" />
+      )}
+      {canScrollNext && (
+        <CarouselNext className="absolute top-1/2 -right-2 -translate-y-1/2 text-black size-10 z-10 cursor-pointer" />
+      )}
+
+      {/* Right Shadow Overlay */}
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/50 to-transparent" />
+    </Carousel>
   );
 }

@@ -79,6 +79,36 @@ const SUBJECTS = [
     dotColor: "#22c55e",
     dotPosition: { angle: -60 },
   },
+  {
+    name: "Accounts",
+    score: 0,
+    targetScore: 62,
+    progress: 0,
+    targetProgress: 40,
+    gradientId: "accounts-gradient",
+    gradientColors: {
+      start: "#f59e0b",
+      middle: "#eab308",
+      end: "#22c55e",
+    },
+    dotColor: "#22c55e",
+    dotPosition: { angle: -60 },
+  },
+  {
+    name: "Biology",
+    score: 0,
+    targetScore: 100,
+    progress: 0,
+    targetProgress: 90,
+    gradientId: "biology-gradient",
+    gradientColors: {
+      start: "#f59e0b",
+      middle: "#eab308",
+      end: "#22c55e",
+    },
+    dotColor: "#22c55e",
+    dotPosition: { angle: -60 },
+  },
 ];
 
 export { AVATARS, MENU_ITEMS, OFFERS, SUBJECTS };
